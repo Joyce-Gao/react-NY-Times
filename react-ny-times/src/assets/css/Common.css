@@ -1,0 +1,30 @@
+.full-width {
+    width: 100%;
+}
+.top-speace {
+    margin-top: 80px;
+}
+
+.border-wrap {
+    border: 1px solid #eee;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    margin: 20px 0;
+}
+
+.header-search-box {
+    color: #fff;
+    border-color: #fff;
+}
+.header-search-box:hover {
+    background-color: #0056b3;
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
+.loading-wrap {
+    width: 100%;
+    height: calc(100vh - 80px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

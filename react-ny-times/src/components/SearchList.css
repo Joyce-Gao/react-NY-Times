@@ -1,0 +1,12 @@
+.search-last-history {
+    margin: 20px 0;
+    display: flex;
+}
+.search-last-history span,
+.search-history-item {
+    margin-right: 20px;
+}
+.search-history-item {
+    color: #0056b3;
+    font-weight: 500;
+}
