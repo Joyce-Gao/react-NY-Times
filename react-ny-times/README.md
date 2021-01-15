@@ -18,19 +18,21 @@ This repository contains codebase for "NY Times Most Popular Articles".
 
 ## Project Development
 
-Home page call /svc/topstories/v2/home.json
-world call /svc/topstories/v2/world.json
-science call /svc/topstories/v2/science.json
-search call /svc/search/v2/articlesearch.json?q=inputValue
-The search page will display the 5 most recently searched records and the search results
-in article, the comments number is empty.The comment data returned by the article comment is empty, so the simulated data (constants/NewsComments.js) is used and the number of comments is displayed on the page.
-search input is required.
-signIn and Register page can toggle (Through Create Account and please sign in), After logging in or registering, access_token will be saved in localstrage,
-and Update the token of localstrage by modifying the token in the state
+- Start the service with npm run start-auth ro yarn start-auth in the fake-api-jwt-jsonserver file
+- Home page call /svc/topstories/v2/home.json
+- world call /svc/topstories/v2/world.json
+- science call /svc/topstories/v2/science.json
+- search call /svc/search/v2/articlesearch.json?q=inputValue
+- The search page will display the 5 most recently searched records and the search results
+- in article, the comments number is empty.The comment data returned by the article comment is empty, so the simulated data (constants/NewsComments.js) is used and the number of comments is displayed on the page.
+- search input is required.
+- signIn and Register page can toggle (Through Create Account and please sign in), After logging in or registering, access_token will be saved in localstrage,
+  and Update the token of localstrage by modifying the token in the state
 
 setupProxy.js
-/svc/** to https://api.nytimes.com
-/atuh/** to http://localhost:8000/
+
+- /svc/\*\* to https://api.nytimes.com
+- /atuh/\*\* to http://localhost:8000/
 
 NY Times API:
 https://developer.nytimes.com/apis
