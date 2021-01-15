@@ -18,7 +18,7 @@ This repository contains codebase for "NY Times Most Popular Articles".
 
 ## Project Development
 
-- Start the service with npm run start-auth ro yarn start-auth in the fake-api-jwt-jsonserver file
+- Start the service with npm run start-auth ro yarn start-auth in the fake-api-jwt-jsonserver file(Can simulate login registration and refresh token)
 - Home page call /svc/topstories/v2/home.json
 - world call /svc/topstories/v2/world.json
 - science call /svc/topstories/v2/science.json
