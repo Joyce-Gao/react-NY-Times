@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { NAVLIST, SIGNIN } from "../constants/Common";
 import { Searchbox } from "./Searchbox";
 import "./Header.css";
+import { useRefreshToken } from "../util/Helper";
 
 export const Header = () => {
   const isLogin = useSelector((state) => state?.User?.isLogin);
@@ -13,6 +14,7 @@ export const Header = () => {
       {item.label}
     </Nav.Link>
   ));
+  useRefreshToken();
   return (
     <>
       <Navbar expand="md" className="header-wrap" fixed="top">

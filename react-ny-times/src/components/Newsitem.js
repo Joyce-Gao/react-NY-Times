@@ -10,9 +10,9 @@ export const Newsitem = (item) => {
   const thumb = media.find((item) => item.format === "thumbLarge");
   //   const nwsComments = [...MOCKNEWSCOMMENT]?.length;
   // let comments = useGetArticleComments(item.url);
-  //   let comments = useGetArticleComments(
-  //     "https://api.nytimes.com/svc/community/v3/user-content/url.json?api-key=h2E6f7FmFPR9tIj2eY71bsGlmY8w3Etx&offset=0&url=https%3A%2F%2Fwww.nytimes.com%2F2019%2F06%2F21%2Fscience%2Fgiant-squid-cephalopod-video.html"
-  //   );
+  // let comments = useGetArticleComments(
+  //   "https://api.nytimes.com/svc/community/v3/user-content/url.json?api-key=h2E6f7FmFPR9tIj2eY71bsGlmY8w3Etx&offset=0&url=https%3A%2F%2Fwww.nytimes.com%2F2019%2F06%2F21%2Fscience%2Fgiant-squid-cephalopod-video.html"
+  // );
   const comments = { ...MOCKNEWSCOMMENT };
   const length = comments?.results?.comments?.length || 0;
   return (

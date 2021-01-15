@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { SIGNIN, REGISTER } from "../constants/Common";
-import { login, register, useRefreshToken } from "../util/Helper";
+import { login, register } from "../util/Helper";
 import { setLogin, setTocken } from "../actions/UserActions";
 
 export const UserForm = () => {
@@ -15,7 +15,6 @@ export const UserForm = () => {
   const [isRegister, setisRegister] = useState(false);
   const dispatch = useDispatch();
   const history = useHistory();
-  useRefreshToken();
   useEffect(() => {
     setGetError(false);
   }, []);

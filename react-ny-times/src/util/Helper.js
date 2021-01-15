@@ -3,7 +3,7 @@ import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import { NYAPPKEY } from "../constants/Common";
 import { setLoading } from "../actions/LoadingActions";
-import { setLocalStorage } from "./localStorage";
+import { setLocalStorage, removeLocalStorage } from "./localStorage";
 
 export const useGetNewsList = (url) => {
   const [list, setList] = useState(null);
@@ -51,6 +51,7 @@ export const useRefreshToken = () => {
   useEffect(() => {
     setLocalStorage("access_token", token);
   }, [token]);
+  if (!token) removeLocalStorage("access_token");
 };
 
 export const login = (email, password) => {

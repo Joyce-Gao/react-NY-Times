@@ -21,6 +21,7 @@ export const SETLOGIN = "SET_LOGIN";
 export const SETTOKEN = "SET_TOKEN";
 
 export const SETLOAING = "SET_LOADING";
+export const REFRESHING_TOKEN = "REFRESHING_TOKEN";
 
 export const MOCKNEWSLIST = [
   {
