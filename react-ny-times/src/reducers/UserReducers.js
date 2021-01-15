@@ -1,8 +1,9 @@
-import { SETLOGIN, SETSIGNOUT } from "../constants/Common";
+import { SETLOGIN, SETTOKEN } from "../constants/Common";
 
 let initialState = {
   isLogin: false,
   accout: null,
+  access_token: null,
 };
 export const User = (state = initialState, action = {}) => {
   switch (action.type) {
@@ -12,10 +13,11 @@ export const User = (state = initialState, action = {}) => {
         isLogin: true,
         accout: action.accout,
       };
-    case SETSIGNOUT:
+    case SETTOKEN:
       return {
         ...state,
-        isLogin: false,
+        isLogin: true,
+        access_token: action.token,
       };
     default:
       return state;

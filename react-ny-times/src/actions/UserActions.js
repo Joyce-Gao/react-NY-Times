@@ -1,10 +1,11 @@
-import { SETLOGIN, SETSIGNOUT } from "../constants/Common";
+import { SETLOGIN, SETTOKEN } from "../constants/Common";
 
 export const setLogin = (accout) => ({
   type: SETLOGIN,
   accout,
 });
 
-export const setSignOut = () => ({
-  type: SETSIGNOUT,
+export const setTocken = (token) => ({
+  type: SETTOKEN,
+  token,
 });

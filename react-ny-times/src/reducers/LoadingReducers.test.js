@@ -1,7 +1,7 @@
 import { SETLOAING } from "../constants/Common";
 import { Loading } from "./LoadingReducers";
 
-describe("todos reduicer", () => {
+describe("Loading reduicer", () => {
   it("should return isLoading is false", () => {
     expect(
       Loading(

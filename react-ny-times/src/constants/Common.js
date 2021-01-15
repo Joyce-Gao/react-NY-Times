@@ -18,7 +18,7 @@ export const SEARCHHISTORYTITLE = "History Of Last 5 Searched Words:";
 export const SIGNIN = "Sign In";
 export const REGISTER = "Regiser";
 export const SETLOGIN = "SET_LOGIN";
-export const SETSIGNOUT = "SET_SIGN_OUT";
+export const SETTOKEN = "SET_TOKEN";
 
 export const SETLOAING = "SET_LOADING";
 

@@ -14,20 +14,36 @@ var restream = function (proxyReq, req, res, options) {
 };
 
 module.exports = function (app) {
+  // app.use(
+  //   "**",
+  //   createProxyMiddleware(filter, {
+  //     target: "https://api.nytimes.com",
+  //     //   headers: {
+  //     //     Connection: "keep-alive",
+  //     //   },
+  //     onProxyReq: restream,
+  //     changeOrigin: true,
+  //     secure: false,
+  //   })
+  // );
+  //   app.listen(3000);
+
   app.use(
-    "**",
-    createProxyMiddleware(filter, {
+    "/svc/**",
+    createProxyMiddleware({
       target: "https://api.nytimes.com",
-      //   headers: {
-      //     Connection: "keep-alive",
-      //   },
-      onProxyReq: restream,
       changeOrigin: true,
       secure: false,
     })
   );
-  //   app.listen(3000);
-
+  app.use(
+    "/images/**",
+    createProxyMiddleware({
+      target: "https://static01.nyt.com",
+      changeOrigin: true,
+      secure: false,
+    })
+  );
   app.use(
     "/auth/**",
     createProxyMiddleware({

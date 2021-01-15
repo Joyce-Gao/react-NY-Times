@@ -8,8 +8,6 @@ import "./Header.css";
 export const Header = () => {
   const isLogin = useSelector((state) => state?.User?.isLogin);
   const accout = useSelector((state) => state?.User?.accout);
-  console.log(isLogin, "isLogin");
-  console.log(accout, "accout");
   const navList = NAVLIST.map((item, index) => (
     <Nav.Link key={index} href={item.path}>
       {item.label}

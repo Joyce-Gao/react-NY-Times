@@ -4,17 +4,18 @@ import { useHistory } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { SIGNIN, REGISTER } from "../constants/Common";
-import { login, register } from "../util/Helper";
-import { setLogin } from "../actions/UserActions";
+import { login, register, useRefreshToken } from "../util/Helper";
+import { setLogin, setTocken } from "../actions/UserActions";
 
 export const UserForm = () => {
-  const [email, setEmail] = useState(null);
-  const [password, setPassword] = useState(null);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [getError, setGetError] = useState(null);
   const [errorMessage, setErrorMessage] = useState(false);
   const [isRegister, setisRegister] = useState(false);
   const dispatch = useDispatch();
   const history = useHistory();
+  useRefreshToken();
   useEffect(() => {
     setGetError(false);
   }, []);
@@ -25,7 +26,7 @@ export const UserForm = () => {
       (res) => {
         setGetError(false);
         const access_token = res?.data?.access_token;
-        localStorage.setItem("access_token", access_token);
+        dispatch(setTocken(access_token));
         dispatch(setLogin(email));
         history.push("/");
       },

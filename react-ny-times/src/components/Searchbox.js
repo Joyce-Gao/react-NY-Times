@@ -4,6 +4,7 @@ import { Form, FormControl, Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { setSearchValue, setSearchAlert } from "../actions/SearchActions";
 import { setLoading } from "../actions/LoadingActions";
+import { setLocalStorage } from "../util/localStorage";
 
 export const Searchbox = () => {
   const [inputVal, setInputVal] = useState("");
@@ -18,8 +19,8 @@ export const Searchbox = () => {
       }
       searchHistory.push(inputVal);
       dispatch(setSearchValue(inputVal));
-      console.log(searchHistory, "searchHistory");
-      localStorage.setItem("searchLastHistory", JSON.stringify(searchHistory));
+      setLocalStorage("searchLastHistory", searchHistory);
+      // localStorage.setItem("searchLastHistory", JSON.stringify(searchHistory));
       dispatch(setSearchAlert(false));
       dispatch(setLoading(true));
     } else {
