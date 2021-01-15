@@ -88,7 +88,7 @@ export const refreshToken_request = (token) => {
   return axios.post(
     "/auth/refresh",
     {
-      token,
+      access_token: token,
     },
     {
       headers: {

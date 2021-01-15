@@ -28,7 +28,7 @@ export const Newsitem = (item) => {
             {item.title}
           </a>
           <div className="news-info">
-            <span cl assName="news-type" title={item.section}>
+            <span className="news-type" title={item.section}>
               {item.section}
             </span>
             <span title={item.byline}>{item.byline}</span>

@@ -22,6 +22,8 @@ export const SETTOKEN = "SET_TOKEN";
 
 export const SETLOAING = "SET_LOADING";
 export const REFRESHING_TOKEN = "REFRESHING_TOKEN";
+export const REFRESHING_TOKEN_DONE = "user/REFRESHING_TOKEN_DONE";
+export const REFRESHING_TOKEN_FAILURE = "user/REFRESHING_TOKEN_FAILURE";
 
 export const MOCKNEWSLIST = [
   {

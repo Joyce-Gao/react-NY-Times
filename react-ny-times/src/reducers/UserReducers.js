@@ -1,4 +1,10 @@
-import { SETLOGIN, SETTOKEN } from "../constants/Common";
+import {
+  SETLOGIN,
+  SETTOKEN,
+  REFRESHING_TOKEN,
+  REFRESHING_TOKEN_DONE,
+  REFRESHING_TOKEN_FAILURE,
+} from "../constants/Common";
 
 let initialState = {
   isLogin: false,
@@ -12,6 +18,7 @@ export const User = (state = initialState, action = {}) => {
         ...state,
         isLogin: true,
         accout: action.accout,
+        access_token: action.token,
       };
     case SETTOKEN:
       return {
@@ -19,6 +26,13 @@ export const User = (state = initialState, action = {}) => {
         isLogin: true,
         access_token: action.token,
       };
+
+    case REFRESHING_TOKEN:
+      return { ...state, ...action };
+    case REFRESHING_TOKEN_DONE:
+      return { ...state, token: action.token, refreshTokenPromise: undefined };
+    case REFRESHING_TOKEN_FAILURE:
+      return { ...state, token: action.token, refreshTokenPromise: undefined };
     default:
       return state;
   }

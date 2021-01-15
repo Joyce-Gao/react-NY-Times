@@ -4,13 +4,15 @@ import { refreshToken } from "../actions/UserActions";
 
 export default function authMiddleware({ dispatch, getState }) {
   return (next) => (action) => {
+    let state = getState();
     if (typeof action === "function") {
-      let state = getState();
       if (state?.User?.access_token && isExpired(state?.User?.access_token)) {
-        if (!state?.User?.refreshTokenPromise) {
-          return refreshToken(dispatch, state).then(() => next(action));
+        if (!getState().User.refreshTokenPromise) {
+          return dispatch(
+            refreshToken(getState().User?.access_token)
+          ).then(() => next(action));
         } else {
-          return state?.User?.refreshTokenPromise.then(() => next(action));
+          return getState().User.refreshTokenPromise.then(() => next(action));
         }
       }
     }
@@ -18,8 +20,10 @@ export default function authMiddleware({ dispatch, getState }) {
     switch (action.type) {
       case SETLOGIN:
       case REGISTER:
+        tokenRefreshInterval(dispatch, action?.token);
+        break;
       case REFRESHING_TOKEN:
-        tokenRefreshInterval(dispatch, action?.access_token);
+        tokenRefreshInterval(dispatch, state.User.access_token);
         break;
       default:
     }
@@ -28,7 +32,7 @@ export default function authMiddleware({ dispatch, getState }) {
 }
 
 let refreshInterval;
-let token_refresh_time = 5000;
+let token_refresh_time = 1000 * 60 * 15;
 
 function tokenRefreshInterval(dispatch, access_token) {
   if (refreshInterval) window.clearInterval(refreshInterval);
@@ -41,10 +45,5 @@ function tokenRefreshInterval(dispatch, access_token) {
 function isExpired(token) {
   let currentTime = new Date();
   let expires_date = new Date(jwt_decode(token)?.exp);
-  console.log(
-    jwt_decode(token)?.exp,
-    "jwt_decode(token)?.expjwt_decode(token)?.exp"
-  );
-  console.log(expires_date, "expires_dateexpires_dateexpires_date");
   return currentTime > expires_date;
 }

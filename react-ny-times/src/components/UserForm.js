@@ -26,7 +26,7 @@ export const UserForm = () => {
         setGetError(false);
         const access_token = res?.data?.access_token;
         dispatch(setTocken(access_token));
-        dispatch(setLogin(email));
+        dispatch(setLogin(email, access_token));
         history.push("/");
       },
       (error) => {
