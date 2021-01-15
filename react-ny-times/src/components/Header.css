@@ -18,5 +18,16 @@
 }
 
 @media only screen and (max-width: 768px) {
-    
+    .header-user-state {
+        max-width: 150px;
+        min-width: 60px;
+        height: 30px;
+        text-overflow: ellipsis;
+        display: block;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    #searchbox {
+        flex-wrap: nowrap;
+    }
 }
