@@ -3,7 +3,6 @@ import {
   SET_PAGINATION_ACTIVE,
   PAGINATION_ACTIVE,
   PAGINATION_NUM,
-  SET_LOADING,
 } from "../constants/Common";
 import { Pagination } from "./PaginationReducers";
 
