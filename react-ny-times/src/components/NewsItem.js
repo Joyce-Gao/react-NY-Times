@@ -2,6 +2,7 @@ import React from "react";
 import { Row, Col } from "react-bootstrap";
 import { MOCK_NEWS_COMMENT } from "../constants/NewsComments";
 import Moment from "react-moment";
+import { DATE_FORMAT } from "../constants/Common";
 // import { useGetArticleComments } from "../util/Helper"; //real data request need hook
 import "./NewsItem.css";
 
@@ -33,7 +34,7 @@ export const NewsItem = (item) => {
             </span>
             <span title={item.byline}>{item.byline}</span>
             <span>
-              <Moment date={item.published_date} format="YYYY-MM-DD HH:mm:ss" />
+              <Moment date={item.published_date} format={DATE_FORMAT} />
             </span>
             {length > 0 && <span>{length} comments</span>}
           </div>

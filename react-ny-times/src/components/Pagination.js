@@ -9,8 +9,8 @@ import {
 import "./Pagination.css";
 
 export const PaginationList = ({ totalNum }) => {
-  let items = [];
-  let pageSize = Math.ceil(totalNum / PAGINATION_NUM);
+  const items = [];
+  const pageSize = Math.ceil(totalNum / PAGINATION_NUM);
   const dispatch = useDispatch();
   const active = useSelector((state) => state.Pagination.activePage);
   const [activePage, setActivePage] = useState(active);
