@@ -9,7 +9,6 @@ export const SearchItem = (item) => {
   const thumb = media.find((item) => item.crop_name === "articleLarge");
   let comments = useGetArticleComments(item.web_url);
   if (comments?.results?.comments?.length) return;
-  // const commentsLength = comments?.results?.comments?.length;
   return (
     <div className="border-wrap news-item-wrap">
       <Row>
@@ -30,7 +29,6 @@ export const SearchItem = (item) => {
             <span>
               <Moment date={item.pub_date} format="YYYY-MM-DD HH:mm:ss" />
             </span>
-            {/* {commentsLength > 0 && <span>{commentsLength} comments</span>} */}
           </div>
           {!!item.lead_paragraph && (
             <p className="news-abstract">

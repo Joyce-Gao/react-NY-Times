@@ -2,9 +2,12 @@
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
     background: #007bff;
 }
-.navbar-nav a{
-    color: white !important;
+.navbar-nav a.nav-link{
+    color: rgba(255, 255, 255, .6) !important;
     font-weight: 500;
+}
+.navbar-nav a.nav-link.active {
+    color: rgba(255, 255, 255, 1) !important;
 }
 .header-user-state {
     color: white;

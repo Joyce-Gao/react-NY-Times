@@ -11,12 +11,14 @@ import Search from "./pages/Search";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import "./assets/css/Common.css";
+import { Header } from "./components/Header";
 
 function App() {
   const store = configureStore();
   return (
     <Provider store={store}>
       <Router>
+        <Header />
         <Switch>
           <Route exact path="/" component={Homepage} />
           <Route path="/signIn" component={SignIn} />
