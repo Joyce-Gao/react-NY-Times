@@ -1,6 +1,6 @@
-import { SETLOAING } from "../constants/Common";
+import { SET_LOADING } from "../constants/Common";
 
 export const setLoading = (isLoading) => ({
-  type: SETLOAING,
+  type: SET_LOADING,
   isLoading,
 });

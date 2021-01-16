@@ -1,4 +1,4 @@
-import { SETLOAING } from "../constants/Common";
+import { SET_LOADING } from "../constants/Common";
 import { Loading } from "./LoadingReducers";
 
 describe("Loading reduicer", () => {
@@ -7,7 +7,7 @@ describe("Loading reduicer", () => {
       Loading(
         {},
         {
-          type: SETLOAING,
+          type: SET_LOADING,
           isLoading: false,
         }
       )
@@ -19,7 +19,7 @@ describe("Loading reduicer", () => {
       Loading(
         {},
         {
-          type: SETLOAING,
+          type: SET_LOADING,
           isLoading: true,
         }
       )

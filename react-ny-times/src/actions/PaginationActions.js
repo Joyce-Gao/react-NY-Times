@@ -1,12 +1,15 @@
-import { SETPAGINATIONLIST, SETPAGINATIONACTIVE } from "../constants/Common";
+import {
+  SET_PAGINATION_LIST,
+  SET_PAGINATION_ACTIVE,
+} from "../constants/Common";
 
 export const setPaginationList = (pageSize, activePage) => ({
-  type: SETPAGINATIONLIST,
+  type: SET_PAGINATION_LIST,
   pageSize,
   activePage,
 });
 
 export const setPaginationActive = (activePage) => ({
-  type: SETPAGINATIONACTIVE,
+  type: SET_PAGINATION_ACTIVE,
   activePage,
 });

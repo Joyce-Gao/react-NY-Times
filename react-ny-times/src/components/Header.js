@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Navbar, Nav, Row, Col } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { NAVLIST, SIGNIN } from "../constants/Common";
+import { NAV_LIST, SIGN_IN_LABEL } from "../constants/Common";
 import { SearchBox } from "./SearchBox";
 import "./Header.css";
 import { useRefreshToken } from "../hooks/CustomHook";
@@ -10,7 +10,7 @@ import { useRefreshToken } from "../hooks/CustomHook";
 export const Header = () => {
   const isLogin = useSelector((state) => state?.User?.isLogin);
   const account = useSelector((state) => state?.User?.account);
-  const navList = NAVLIST.map((item, index) => (
+  const navList = NAV_LIST.map((item, index) => (
     <NavLink key={index} exact={true} to={item.path} className="nav-link">
       {item.label}
     </NavLink>
@@ -31,8 +31,8 @@ export const Header = () => {
             <Col xs="2" lg="2">
               {isLogin && <div className="header-user-state">{account}</div>}
               {!isLogin && (
-                <Nav.Link href="/signin" className="header-user-state">
-                  {SIGNIN}
+                <Nav.Link href="/signIn" className="header-user-state">
+                  {SIGN_IN_LABEL}
                 </Nav.Link>
               )}
             </Col>

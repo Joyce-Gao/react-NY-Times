@@ -1,11 +1,11 @@
-import { SETSEARCHVALUE, SETSEARCHALERT } from "../constants/Common";
+import { SET_SEARCH_VALUE, SET_SEARCH_ALERT } from "../constants/Common";
 
 export const setSearchValue = (searchValue) => ({
-  type: SETSEARCHVALUE,
+  type: SET_SEARCH_VALUE,
   searchValue,
 });
 
 export const setSearchAlert = (searchValue) => ({
-  type: SETSEARCHALERT,
+  type: SET_SEARCH_ALERT,
   searchValue,
 });

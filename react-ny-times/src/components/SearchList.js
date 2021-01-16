@@ -5,9 +5,9 @@ import { SearchItem } from "./SearchItem";
 import { useGetNewsList } from "../hooks/CustomHook";
 import { PaginationList } from "./Pagination";
 import {
-  ALERTNOTFOUND,
-  ALERTSEARCHTEXT,
-  SEARCHHISTORYTITLE,
+  ALERT_NOT_FOUND,
+  ALERT_SEARCH_TEXT,
+  SEARCH_HISTORY_LABEL,
 } from "../constants/Common";
 import "./SearchList.css";
 
@@ -43,14 +43,14 @@ export const SearchList = ({ url }) => {
         <div>
           {!!searchHistory?.length && (
             <div className="search-last-history">
-              <span>{SEARCHHISTORYTITLE}</span>
+              <span>{SEARCH_HISTORY_LABEL}</span>
               {searchHistoryItem}
             </div>
           )}
-          {isAlert && <Alert variant="danger">{ALERTSEARCHTEXT}</Alert>}
+          {isAlert && <Alert variant="danger">{ALERT_SEARCH_TEXT}</Alert>}
           {!isAlert && (
             <div>
-              {!newsLength && <Alert variant="danger">{ALERTNOTFOUND}</Alert>}
+              {!newsLength && <Alert variant="danger">{ALERT_NOT_FOUND}</Alert>}
               {!!newsLength && (
                 <>
                   <div>total: {newsLength}</div>

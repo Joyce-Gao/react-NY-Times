@@ -3,7 +3,7 @@ import { Alert } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
-import { SIGNIN, REGISTER } from "../constants/Common";
+import { SIGN_IN_LABEL, REGISTER } from "../constants/Common";
 import { signInAction, registerAction } from "../actions/UserActions";
 
 export const UserForm = () => {
@@ -65,7 +65,7 @@ export const UserForm = () => {
           />
         </Form.Group>
         <Button variant="primary" type="submit" size="lg" block>
-          {isRegister ? REGISTER : SIGNIN}
+          {isRegister ? REGISTER : SIGN_IN_LABEL}
         </Button>
         {isRegister ? (
           <div className="login-footer-declare">

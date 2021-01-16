@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { SearchList } from "../components/SearchList";
-import { NYAPPKEY } from "../constants/Common";
+import { NY_APP_KEY } from "../constants/Common";
 
 const Search = () => {
   const searchValue = useSelector((status) => status.Search.searchValue);
@@ -9,7 +9,7 @@ const Search = () => {
     <>
       <div className="top-space">
         <SearchList
-          url={`/svc/search/v2/articlesearch.json?q=${searchValue}&api-key=${NYAPPKEY}`}
+          url={`/svc/search/v2/articlesearch.json?q=${searchValue}&api-key=${NY_APP_KEY}`}
         />
       </div>
     </>

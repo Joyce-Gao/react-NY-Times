@@ -1,23 +1,23 @@
 import {
-  SETPAGINATIONLIST,
-  SETPAGINATIONACTIVE,
-  PAGINATIONACTIVE,
-  PAGINATIONNUM,
+  SET_PAGINATION_LIST,
+  SET_PAGINATION_ACTIVE,
+  PAGINATION_ACTIVE,
+  PAGINATION_NUM,
 } from "../constants/Common";
 
 let initialState = {
-  pageSize: PAGINATIONNUM,
-  activePage: PAGINATIONACTIVE,
+  pageSize: PAGINATION_NUM,
+  activePage: PAGINATION_ACTIVE,
 };
 export const Pagination = (state = initialState, action = {}) => {
   switch (action.type) {
-    case SETPAGINATIONLIST:
+    case SET_PAGINATION_LIST:
       return {
         ...state,
         pageSize: action.pageSize,
         activePage: action.activePage,
       };
-    case SETPAGINATIONACTIVE:
+    case SET_PAGINATION_ACTIVE:
       return {
         ...state,
         activePage: action.activePage,

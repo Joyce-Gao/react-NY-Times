@@ -1,6 +1,6 @@
 import {
   SIGN_IN,
-  SIGNIN_FAILURE,
+  SIGN_IN_FAILURE,
   REGISTER_DONE,
   REGISTER_FAILURE,
   REFRESHING_TOKEN,
@@ -23,7 +23,7 @@ export const User = (state = initialState, action = {}) => {
         account: action.account,
         access_token: action.token,
       };
-    case SIGNIN_FAILURE:
+    case SIGN_IN_FAILURE:
     case REGISTER_FAILURE:
       return {
         ...state,

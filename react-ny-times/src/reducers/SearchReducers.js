@@ -1,4 +1,4 @@
-import { SETSEARCHVALUE, SETSEARCHALERT } from "../constants/Common";
+import { SET_SEARCH_VALUE, SET_SEARCH_ALERT } from "../constants/Common";
 
 let initialState = {
   searchValue: "",
@@ -6,12 +6,12 @@ let initialState = {
 };
 export const Search = (state = initialState, action = {}) => {
   switch (action.type) {
-    case SETSEARCHVALUE:
+    case SET_SEARCH_VALUE:
       return {
         ...state,
         searchValue: action.searchValue,
       };
-    case SETSEARCHALERT:
+    case SET_SEARCH_ALERT:
       return {
         ...state,
         searchAlert: action.searchAlert,

@@ -1,6 +1,6 @@
 import {
   SIGN_IN,
-  SIGNIN_FAILURE,
+  SIGN_IN_FAILURE,
   REGISTER_DONE,
   REGISTER_FAILURE,
   REFRESHING_TOKEN,
@@ -21,7 +21,7 @@ export function signInAction(email, password) {
       },
       (err) => {
         dispatch({
-          type: SIGNIN_FAILURE,
+          type: SIGN_IN_FAILURE,
           account: null,
           access_token: null,
         });

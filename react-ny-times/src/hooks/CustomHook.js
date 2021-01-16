@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
-import { NYAPPKEY } from "../constants/Common";
+import { NY_APP_KEY } from "../constants/Common";
 import { setLoading } from "../actions/LoadingActions";
 import { setLocalStorage, removeLocalStorage } from "../util/localStorage";
 
@@ -25,7 +25,7 @@ export const useGetArticleComments = (url) => {
     const commentsList = async () =>
       await axios
         .get(
-          `/svc/community/v3/user-content/url.json?api-key=${NYAPPKEY}&offset=0&url=${url}`
+          `/svc/community/v3/user-content/url.json?api-key=${NY_APP_KEY}&offset=0&url=${url}`
         )
         .then((res) => setComments(res));
     commentsList();
@@ -39,7 +39,7 @@ export const useGetSearchList = (url) => {
   useEffect(() => {
     const searchList = async () =>
       await axios
-        .get(`${url}?q=${searchValue}&api-key=${NYAPPKEY}`)
+        .get(`${url}?q=${searchValue}&api-key=${NY_APP_KEY}`)
         .then((res) => setSearchList(res));
     searchList();
   }, [url, searchValue]);
