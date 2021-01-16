@@ -6,13 +6,13 @@ import {
   setPaginationList,
   setPaginationActive,
 } from "../actions/PaginationActions";
-import './Pagination.css'
+import "./Pagination.css";
 
 export const PaginationList = ({ totalNum }) => {
   let items = [];
   let pageSize = Math.ceil(totalNum / PAGINATIONNUM);
   const dispatch = useDispatch();
-  const initActive = useSelector(state => state.Pagination.activePage);
+  const initActive = useSelector((state) => state.Pagination.activePage);
   const [activePage, setActivePage] = useState(initActive);
   useEffect(() => {
     setActivePage(activePage);
@@ -20,7 +20,8 @@ export const PaginationList = ({ totalNum }) => {
   }, [dispatch, activePage]);
 
   for (let number = 1; number <= pageSize; number++) {
-    items.push(<Pagination.Item
+    items.push(
+      <Pagination.Item
         key={number}
         active={number === activePage}
         onClick={() => {
@@ -29,24 +30,26 @@ export const PaginationList = ({ totalNum }) => {
         }}
       >
         {number}
-      </Pagination.Item>);
+      </Pagination.Item>
+    );
   }
-  
+
   return (
     <Container className="pagination-wrap">
       <Pagination>
-        {/* first last default state is disabled */}
-        <Pagination.First onClick={() => {
-        setActivePage(1);
-        dispatch(setPaginationActive(1));
-        }} />
-        {/* <Pagination.Prev /> */}
+        <Pagination.First
+          onClick={() => {
+            setActivePage(1);
+            dispatch(setPaginationActive(1));
+          }}
+        />
         {items}
-        {/* <Pagination.Next /> */}
-        <Pagination.Last onClick={() => {
-        setActivePage(pageSize);
-        dispatch(setPaginationActive(pageSize));
-      }}/>
+        <Pagination.Last
+          onClick={() => {
+            setActivePage(pageSize);
+            dispatch(setPaginationActive(pageSize));
+          }}
+        />
       </Pagination>
     </Container>
   );

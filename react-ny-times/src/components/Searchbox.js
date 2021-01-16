@@ -20,7 +20,6 @@ export const SearchBox = () => {
       searchHistory.push(inputVal);
       dispatch(setSearchValue(inputVal));
       setLocalStorage("searchLastHistory", searchHistory);
-      // localStorage.setItem("searchLastHistory", JSON.stringify(searchHistory));
       dispatch(setSearchAlert(false));
       dispatch(setLoading(true));
     } else {
