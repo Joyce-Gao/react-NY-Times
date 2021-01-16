@@ -7,7 +7,7 @@ const World = (props) => {
   return (
     <>
       <Header />
-      <div className="top-speace">
+      <div className="top-space">
         <List url={`/svc/topstories/v2/world.json?api-key=${NYAPPKEY}`} />
       </div>
     </>
