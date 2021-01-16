@@ -11,7 +11,7 @@ export const UserForm = () => {
   const [password, setPassword] = useState("");
   const [getError, setGetError] = useState(null);
   const [errorMessage, setErrorMessage] = useState(false);
-  const [isRegister, setisRegister] = useState(false);
+  const [isRegister, setIsRegister] = useState(false);
   const dispatch = useDispatch();
   const history = useHistory();
   useEffect(() => {
@@ -70,14 +70,14 @@ export const UserForm = () => {
         {isRegister ? (
           <div className="login-footer-declare">
             Have an account?
-            <Button variant="link" onClick={() => setisRegister(false)}>
+            <Button variant="link" onClick={() => setIsRegister(false)}>
               please sign in
             </Button>
           </div>
         ) : (
           <div className="login-footer-declare">
             Don't have an account?
-            <Button variant="link" onClick={() => setisRegister(true)}>
+            <Button variant="link" onClick={() => setIsRegister(true)}>
               Create Account
             </Button>
           </div>
