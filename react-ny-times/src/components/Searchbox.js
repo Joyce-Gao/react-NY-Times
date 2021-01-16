@@ -6,7 +6,7 @@ import { setSearchValue, setSearchAlert } from "../actions/SearchActions";
 import { setLoading } from "../actions/LoadingActions";
 import { setLocalStorage } from "../util/localStorage";
 
-export const Searchbox = () => {
+export const SearchBox = () => {
   const [inputVal, setInputVal] = useState("");
   const history = useHistory();
   const dispatch = useDispatch();
@@ -30,7 +30,7 @@ export const Searchbox = () => {
     history.push("/search");
   };
   return (
-    <Form inline id="searchbox">
+    <Form inline id="searchBox">
       <FormControl
         type="text"
         placeholder="Search"

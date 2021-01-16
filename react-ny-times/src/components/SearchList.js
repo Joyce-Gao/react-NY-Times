@@ -48,11 +48,11 @@ export const SearchList = ({ url }) => {
           )}
           {isAlert && <Alert variant="danger">{ALERTSEARCHTEXT}</Alert>}
           {!isAlert && (
-            <div className="">
+            <div>
               {!newsLength && <Alert variant="danger">{ALERTNOTFOUND}</Alert>}
               {!!newsLength && (
                 <>
-                  <div className="">total: {newsLength}</div>
+                  <div>total: {newsLength}</div>
                   {newsListItem}
                   <PaginationList totalNum={newsLength} />
                 </>
@@ -61,25 +61,6 @@ export const SearchList = ({ url }) => {
           )}
         </div>
       )}
-      {/* {!!searchHistory?.length && (
-        <div className="search-last-history">
-          <span>{SEARCHHISTORYTITLE}</span>
-          {searchHistoryItem}
-        </div>
-      )}
-      {isAlert && <Alert variant="danger">{ALERTSEARCHTEXT}</Alert>}
-      {!isAlert && (
-        <div className="">
-          {!newsLength && <Alert variant="danger">{ALERTNOTFOUND}</Alert>}
-          {!!newsLength && (
-            <>
-              <div className="">total: {newsLength}</div>
-              {newsListItem}
-              <PaginationList totalNum={newsLength} />
-            </>
-          )}
-        </div>
-      )} */}
     </Container>
   );
 };

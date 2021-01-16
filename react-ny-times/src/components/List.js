@@ -27,8 +27,8 @@ export const List = ({ url }) => {
         </div>
       )}
       {!!newsLength && (
-        <div className="">
-          <div className="">total: {newsLength}</div>
+        <div>
+          <div>total: {newsLength}</div>
           {newsListItem}
           <PaginationList totalNum={newsLength} />
         </div>

@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Navbar, Nav, Row, Col } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { NAVLIST, SIGNIN } from "../constants/Common";
-import { Searchbox } from "./Searchbox";
+import { SearchBox } from "./Searchbox";
 import "./Header.css";
 import { useRefreshToken } from "../util/Helper";
 
@@ -24,7 +24,7 @@ export const Header = () => {
               <Navbar.Toggle />
               <Navbar.Collapse>
                 <Nav className="mr-auto">{navList}</Nav>
-                <Searchbox />
+                <SearchBox />
               </Navbar.Collapse>
             </Col>
             <Col xs="2" lg="2">

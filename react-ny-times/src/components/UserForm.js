@@ -67,9 +67,6 @@ export const UserForm = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Group>
-        {/* <Form.Group controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Remember Me" />
-        </Form.Group> */}
         <Button variant="primary" type="submit" size="lg" block>
           {isRegister ? REGISTER : SIGNIN}
         </Button>

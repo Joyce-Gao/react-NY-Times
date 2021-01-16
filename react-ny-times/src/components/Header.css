@@ -27,7 +27,7 @@
         overflow: hidden;
         white-space: nowrap;
     }
-    #searchbox {
+    #searchBox {
         flex-wrap: nowrap;
     }
 }
