@@ -1,5 +1,9 @@
 import jwt_decode from "jwt-decode";
-import { SETLOGIN, REGISTER, REFRESHING_TOKEN } from "../constants/Common";
+import {
+  SIGN_IN,
+  REGISTER_DONE,
+  REFRESHING_TOKEN_DONE,
+} from "../constants/Common";
 import { refreshToken } from "../actions/UserActions";
 
 export default function authMiddleware({ dispatch, getState }) {
@@ -18,12 +22,10 @@ export default function authMiddleware({ dispatch, getState }) {
     }
 
     switch (action.type) {
-      case SETLOGIN:
-      case REGISTER:
-        tokenRefreshInterval(dispatch, action?.token);
-        break;
-      case REFRESHING_TOKEN:
-        tokenRefreshInterval(dispatch, state.User.access_token);
+      case SIGN_IN:
+      case REGISTER_DONE:
+      case REFRESHING_TOKEN_DONE:
+        tokenRefreshInterval(dispatch, action?.access_token);
         break;
       default:
     }

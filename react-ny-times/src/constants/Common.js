@@ -17,8 +17,11 @@ export const SEARCHHISTORYTITLE = "History Of Last 5 Searched Words:";
 
 export const SIGNIN = "Sign In";
 export const REGISTER = "Regiser";
-export const SETLOGIN = "SET_LOGIN";
-export const SETTOKEN = "SET_TOKEN";
+
+export const SIGN_IN = "SIGN_IN";
+export const SIGNIN_FAILURE = "SIGN_IN_FAILURE";
+export const REGISTER_DONE = "REGISTER_DONE";
+export const REGISTER_FAILURE = "REGISTER_FAILURE";
 
 export const SETLOAING = "SET_LOADING";
 export const REFRESHING_TOKEN = "REFRESHING_TOKEN";

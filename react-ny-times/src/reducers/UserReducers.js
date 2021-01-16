@@ -1,6 +1,8 @@
 import {
-  SETLOGIN,
-  SETTOKEN,
+  SIGN_IN,
+  SIGNIN_FAILURE,
+  REGISTER_DONE,
+  REGISTER_FAILURE,
   REFRESHING_TOKEN,
   REFRESHING_TOKEN_DONE,
   REFRESHING_TOKEN_FAILURE,
@@ -13,20 +15,22 @@ let initialState = {
 };
 export const User = (state = initialState, action = {}) => {
   switch (action.type) {
-    case SETLOGIN:
+    case SIGN_IN:
+    case REGISTER_DONE:
       return {
         ...state,
         isLogin: true,
         accout: action.accout,
         access_token: action.token,
       };
-    case SETTOKEN:
+    case SIGNIN_FAILURE:
+    case REGISTER_FAILURE:
       return {
         ...state,
-        isLogin: true,
-        access_token: action.token,
+        isLogin: false,
+        accout: null,
+        access_token: null,
       };
-
     case REFRESHING_TOKEN:
       return { ...state, ...action };
     case REFRESHING_TOKEN_DONE:

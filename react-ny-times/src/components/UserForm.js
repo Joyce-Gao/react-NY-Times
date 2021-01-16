@@ -4,8 +4,7 @@ import { useHistory } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { SIGNIN, REGISTER } from "../constants/Common";
-import { login, register } from "../util/Helper";
-import { setLogin, setTocken } from "../actions/UserActions";
+import { signInAction, registerAction } from "../actions/UserActions";
 
 export const UserForm = () => {
   const [email, setEmail] = useState("");
@@ -20,18 +19,15 @@ export const UserForm = () => {
   }, []);
   const handleUserForm = (e) => {
     e.preventDefault();
-    const service = isRegister ? register : login;
-    service(email, password).then(
+    const actionType = isRegister ? registerAction : signInAction;
+    dispatch(actionType(email, password)).then(
       (res) => {
         setGetError(false);
-        const access_token = res?.data?.access_token;
-        dispatch(setTocken(access_token));
-        dispatch(setLogin(email, access_token));
         history.push("/");
       },
-      (error) => {
+      (err) => {
         setGetError(true);
-        setErrorMessage(error?.response?.data?.message);
+        setErrorMessage(err?.response?.data?.message);
       }
     );
   };
@@ -54,6 +50,7 @@ export const UserForm = () => {
             type="email"
             placeholder="Enter email"
             value={email}
+            onFocus={() => setGetError(false)}
             onChange={(e) => setEmail(e.target.value)}
           />
         </Form.Group>
