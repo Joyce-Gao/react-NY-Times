@@ -8,7 +8,7 @@ import {
   REFRESHING_TOKEN_FAILURE,
 } from "../constants/Common";
 
-let initialState = {
+const initialState = {
   isLogin: false,
   account: null,
   access_token: null,

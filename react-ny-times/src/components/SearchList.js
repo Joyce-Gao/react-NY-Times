@@ -12,14 +12,14 @@ import {
 import "./SearchList.css";
 
 export const SearchList = ({ url }) => {
-  let newsList = useGetNewsList(url);
+  const newsList = useGetNewsList(url);
   const isLoading = useSelector((state) => state.Loading.isLoading);
   const isAlert = useSelector((state) => state.Search.searchAlert);
   const pageSize = useSelector((state) => state.Pagination.pageSize);
   const activePage = useSelector((state) => state.Pagination.activePage);
   const endSize = pageSize * activePage;
   const startSize = endSize - pageSize;
-  let listData = newsList?.data?.response?.docs || [];
+  const listData = newsList?.data?.response?.docs || [];
   const newsListItem = listData.map(
     (item, index) =>
       index >= startSize &&

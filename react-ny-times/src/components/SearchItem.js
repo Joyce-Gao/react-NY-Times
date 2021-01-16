@@ -7,7 +7,7 @@ import "./NewsItem.css";
 export const SearchItem = (item) => {
   const media = item.multimedia;
   const thumb = media.find((item) => item.crop_name === "articleLarge");
-  let comments = useGetArticleComments(item.web_url);
+  const comments = useGetArticleComments(item.web_url);
   if (comments?.results?.comments?.length) return;
   return (
     <div className="border-wrap news-item-wrap">

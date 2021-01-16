@@ -1,8 +1,12 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { List } from "../components/List";
 import { NY_APP_KEY } from "../constants/Common";
+import { setPaginationActive } from "../actions/PaginationActions";
 
 const Science = () => {
+  const dispatch = useDispatch();
+  dispatch(setPaginationActive(1));
   return (
     <>
       <div className="top-space">

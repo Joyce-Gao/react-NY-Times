@@ -1,6 +1,6 @@
 import { SET_SEARCH_VALUE, SET_SEARCH_ALERT } from "../constants/Common";
 
-let initialState = {
+const initialState = {
   searchValue: "",
   searchAlert: false,
 };

@@ -7,7 +7,6 @@ export const NAV_LIST = [
 export const SEARCH = "Search";
 export const PAGINATION_ACTIVE = 1;
 export const PAGINATION_NUM = 10;
-export const SET_PAGINATION_LIST = "SET_PAGINATION_LIST";
 export const SET_PAGINATION_ACTIVE = "SET_PAGINATION_ACTIVE";
 export const SET_SEARCH_VALUE = "SET_SEARCH_VALUE";
 export const SET_SEARCH_ALERT = "SET_SEARCH_ALERT";

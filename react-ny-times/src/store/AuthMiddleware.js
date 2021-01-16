@@ -34,7 +34,7 @@ export default function authMiddleware({ dispatch, getState }) {
 }
 
 let refreshInterval;
-let token_refresh_time = 1000 * 60 * 15;
+const token_refresh_time = 1000 * 60 * 15;
 
 function tokenRefreshInterval(dispatch, access_token) {
   if (refreshInterval) window.clearInterval(refreshInterval);
@@ -45,7 +45,7 @@ function tokenRefreshInterval(dispatch, access_token) {
 }
 
 function isExpired(token) {
-  let currentTime = new Date();
-  let expires_date = new Date(jwt_decode(token)?.exp);
+  const currentTime = new Date();
+  const expires_date = new Date(jwt_decode(token)?.exp);
   return currentTime > expires_date;
 }

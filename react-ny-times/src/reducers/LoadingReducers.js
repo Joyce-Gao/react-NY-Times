@@ -1,6 +1,6 @@
 import { SET_LOADING } from "../constants/Common";
 
-let initialState = {
+const initialState = {
   isLoading: true,
 };
 export const Loading = (state = initialState, action = {}) => {

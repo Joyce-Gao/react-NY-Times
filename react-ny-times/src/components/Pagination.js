@@ -1,11 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Container, Pagination } from "react-bootstrap";
 import { PAGINATION_NUM } from "../constants/Common";
-import {
-  setPaginationList,
-  setPaginationActive,
-} from "../actions/PaginationActions";
+import { setPaginationActive } from "../actions/PaginationActions";
 import "./Pagination.css";
 
 export const PaginationList = ({ totalNum }) => {
@@ -14,10 +11,6 @@ export const PaginationList = ({ totalNum }) => {
   const dispatch = useDispatch();
   const active = useSelector((state) => state.Pagination.activePage);
   const [activePage, setActivePage] = useState(active);
-  useEffect(() => {
-    setActivePage(activePage);
-    dispatch(setPaginationList(PAGINATION_NUM, activePage));
-  }, [dispatch, activePage]);
 
   for (let number = 1; number <= pageSize; number++) {
     items.push(

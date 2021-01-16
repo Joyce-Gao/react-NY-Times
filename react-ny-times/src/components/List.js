@@ -6,13 +6,13 @@ import { useGetNewsList } from "../hooks/CustomHook";
 import { PaginationList } from "../components/Pagination";
 
 export const List = ({ url }) => {
-  let newsList = useGetNewsList(url);
+  const newsList = useGetNewsList(url);
   const isLoading = useSelector((state) => state.Loading.isLoading);
   const pageSize = useSelector((state) => state.Pagination.pageSize);
   const activePage = useSelector((state) => state.Pagination.activePage);
   const endSize = pageSize * activePage;
   const startSize = endSize - pageSize;
-  let listData = newsList?.data?.results || [];
+  const listData = newsList?.data?.results || [];
   const newsListItem = listData.map(
     (item, index) =>
       index >= startSize &&
