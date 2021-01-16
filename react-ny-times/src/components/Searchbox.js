@@ -14,10 +14,12 @@ export const SearchBox = () => {
     JSON.parse(localStorage.getItem("searchLastHistory")) || [];
   const handleSearch = () => {
     if (inputVal?.length > 0) {
-      if (searchHistory?.length === 5) {
-        searchHistory.shift();
+      if (searchHistory?.indexOf(inputVal) === -1) {
+        if (searchHistory?.length === 5) {
+          searchHistory.shift();
+        }
+        searchHistory.push(inputVal);
       }
-      searchHistory.push(inputVal);
       dispatch(setSearchValue(inputVal));
       setLocalStorage("searchLastHistory", searchHistory);
       dispatch(setSearchAlert(false));
@@ -25,7 +27,6 @@ export const SearchBox = () => {
     } else {
       dispatch(setSearchAlert(true));
     }
-    setInputVal("");
     history.push("/search");
   };
   return (
@@ -36,7 +37,6 @@ export const SearchBox = () => {
         className="mr-sm-2"
         value={inputVal}
         onChange={(e) => setInputVal(e.target.value)}
-        onFocus={(e) => setInputVal("")}
       />
       <Button
         variant="outline-primary"

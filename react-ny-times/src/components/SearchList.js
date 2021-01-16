@@ -25,11 +25,12 @@ export const SearchList = ({ url }) => {
       index >= startSize &&
       index <= endSize && <SearchItem key={index} {...item} />
   );
-  console.log(listData, "listData");
   const newsLength = listData.length;
   const searchHistory = JSON.parse(localStorage.getItem("searchLastHistory"));
   const searchHistoryItem = searchHistory?.map((item, key) => (
-    <span class="search-history-item">{item}</span>
+    <span key={key} className="search-history-item">
+      {item}
+    </span>
   ));
   return (
     <Container>
