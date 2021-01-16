@@ -1,6 +1,6 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
-import { MOCKNEWSCOMMENT } from "../constants/NewsComments";
+import { MOCK_NEWS_COMMENT } from "../constants/NewsComments";
 import Moment from "react-moment";
 // import { useGetArticleComments } from "../util/Helper"; //real data request need hook
 import "./NewsItem.css";
@@ -13,7 +13,7 @@ export const NewsItem = (item) => {
   // let comments = useGetArticleComments(
   //   "https://api.nytimes.com/svc/community/v3/user-content/url.json?api-key=h2E6f7FmFPR9tIj2eY71bsGlmY8w3Etx&offset=0&url=https%3A%2F%2Fwww.nytimes.com%2F2019%2F06%2F21%2Fscience%2Fgiant-squid-cephalopod-video.html"
   // );   // api demo url
-  const comments = { ...MOCKNEWSCOMMENT }; //simulated data
+  const comments = { ...MOCK_NEWS_COMMENT }; //simulated data
   const length = comments?.results?.comments?.length || 0;
   return (
     <div className="border-wrap news-item-wrap">
