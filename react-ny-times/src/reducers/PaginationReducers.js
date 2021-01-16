@@ -3,7 +3,6 @@ import {
   SETPAGINATIONACTIVE,
   PAGINATIONACTIVE,
   PAGINATIONNUM,
-  SETLOAING,
 } from "../constants/Common";
 
 let initialState = {

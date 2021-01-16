@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Navbar, Nav, Row, Col } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { NAVLIST, SIGNIN } from "../constants/Common";
-import { SearchBox } from "./Searchbox";
+import { SearchBox } from "./SearchBox";
 import "./Header.css";
 import { useRefreshToken } from "../util/Helper";
 

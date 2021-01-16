@@ -20,8 +20,8 @@ export const UserForm = () => {
   }, []);
   const handleUserForm = (e) => {
     e.preventDefault();
-    const actionType = isRegister ? register : login;
-    actionType(email, password).then(
+    const service = isRegister ? register : login;
+    service(email, password).then(
       (res) => {
         setGetError(false);
         const access_token = res?.data?.access_token;
@@ -31,7 +31,7 @@ export const UserForm = () => {
       },
       (error) => {
         setGetError(true);
-        setErrorMessage(error?.message);
+        setErrorMessage(error?.response?.data?.message);
       }
     );
   };
@@ -78,7 +78,7 @@ export const UserForm = () => {
             </Button>
           </div>
         ) : (
-          <div>
+          <div className="login-footer-declare">
             Don't have an account?
             <Button variant="link" onClick={() => setisRegister(true)}>
               Create Account

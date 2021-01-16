@@ -2,10 +2,10 @@ import React from "react";
 import { Row, Col } from "react-bootstrap";
 import { MOCKNEWSCOMMENT } from "../constants/NewsComments";
 import Moment from "react-moment";
-import { useGetArticleComments } from "../util/Helper";
-import "./Newsitem.css";
+// import { useGetArticleComments } from "../util/Helper"; //real data request need hook
+import "./NewsItem.css";
 
-export const Newsitem = (item) => {
+export const NewsItem = (item) => {
   const media = item.multimedia;
   const thumb = media.find((item) => item.format === "thumbLarge");
   // These are real data requests and simulated data

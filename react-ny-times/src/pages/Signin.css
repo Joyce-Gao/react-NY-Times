@@ -45,3 +45,8 @@
     padding: 0;
     border: 0;
 }
+.login-footer-declare .btn:hover,
+.login-footer-declare .btn:focus,
+.login-footer-declare .btn:active {
+    box-shadow: none;
+}

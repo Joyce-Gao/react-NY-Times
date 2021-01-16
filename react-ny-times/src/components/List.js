@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Spinner } from "react-bootstrap";
 import { useSelector } from "react-redux";
-import { Newsitem } from "./Newsitem";
+import { NewsItem } from "./NewsItem";
 import { useGetNewsList } from "../util/Helper";
 import { PaginationList } from "../components/Pagination";
 
@@ -16,7 +16,7 @@ export const List = ({ url }) => {
   const newsListItem = listData.map(
     (item, index) =>
       index >= startSize &&
-      index <= endSize && <Newsitem key={index} {...item} />
+      index <= endSize && <NewsItem key={index} {...item} />
   );
   const newsLength = listData.length;
   return (

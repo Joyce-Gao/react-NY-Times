@@ -12,8 +12,8 @@ export const PaginationList = ({ totalNum }) => {
   let items = [];
   let pageSize = Math.ceil(totalNum / PAGINATIONNUM);
   const dispatch = useDispatch();
-  const initActive = useSelector((state) => state.Pagination.activePage);
-  const [activePage, setActivePage] = useState(initActive);
+  const active = useSelector((state) => state.Pagination.activePage);
+  const [activePage, setActivePage] = useState(active);
   useEffect(() => {
     setActivePage(activePage);
     dispatch(setPaginationList(PAGINATIONNUM, activePage));
@@ -33,7 +33,6 @@ export const PaginationList = ({ totalNum }) => {
       </Pagination.Item>
     );
   }
-
   return (
     <Container className="pagination-wrap">
       <Pagination>
@@ -42,6 +41,7 @@ export const PaginationList = ({ totalNum }) => {
             setActivePage(1);
             dispatch(setPaginationActive(1));
           }}
+          disabled={active === 1}
         />
         {items}
         <Pagination.Last
@@ -49,6 +49,7 @@ export const PaginationList = ({ totalNum }) => {
             setActivePage(pageSize);
             dispatch(setPaginationActive(pageSize));
           }}
+          disabled={active === pageSize}
         />
       </Pagination>
     </Container>
