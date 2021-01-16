@@ -6,7 +6,7 @@ const Homepage = () => {
   return (
     <>
       <Header />
-      <div className="top-speace">
+      <div className="top-space">
         <List url={`/svc/topstories/v2/home.json?api-key=${NYAPPKEY}`} />
       </div>
     </>

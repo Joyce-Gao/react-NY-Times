@@ -7,7 +7,7 @@ const Science = () => {
   return (
     <>
       <Header />
-      <div className="top-speace">
+      <div className="top-space">
         <List url={`/svc/topstories/v2/science.json?api-key=${NYAPPKEY}`} />
       </div>
     </>

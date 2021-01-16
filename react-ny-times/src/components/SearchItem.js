@@ -1,7 +1,7 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
 import Moment from "react-moment";
-import { useGetArticleComments } from "../util/Helper";
+import { useGetArticleComments } from "../hooks/CustomHook";
 import "./NewsItem.css";
 
 export const SearchItem = (item) => {

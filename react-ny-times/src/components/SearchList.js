@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Alert, Spinner } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { SearchItem } from "./SearchItem";
-import { useGetNewsList } from "../util/Helper";
+import { useGetNewsList } from "../hooks/CustomHook";
 import { PaginationList } from "./Pagination";
 import {
   ALERTNOTFOUND,

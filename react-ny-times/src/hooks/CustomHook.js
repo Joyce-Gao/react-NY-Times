@@ -3,7 +3,7 @@ import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import { NYAPPKEY } from "../constants/Common";
 import { setLoading } from "../actions/LoadingActions";
-import { setLocalStorage, removeLocalStorage } from "./localStorage";
+import { setLocalStorage, removeLocalStorage } from "../util/localStorage";
 
 export const useGetNewsList = (url) => {
   const [list, setList] = useState(null);
@@ -52,48 +52,4 @@ export const useRefreshToken = () => {
     setLocalStorage("access_token", token);
   }, [token]);
   if (!token) removeLocalStorage("access_token");
-};
-
-export const login = (email, password) => {
-  return axios.post(
-    "/auth/login",
-    {
-      email,
-      password,
-    },
-    {
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-      },
-    }
-  );
-};
-
-export const register = (email, password) => {
-  return axios.post(
-    "/auth/register",
-    {
-      email,
-      password,
-    },
-    {
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-      },
-    }
-  );
-};
-
-export const refreshToken_request = (token) => {
-  return axios.post(
-    "/auth/refresh",
-    {
-      access_token: token,
-    },
-    {
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-      },
-    }
-  );
 };

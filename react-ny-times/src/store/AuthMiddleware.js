@@ -34,7 +34,7 @@ export default function authMiddleware({ dispatch, getState }) {
 }
 
 let refreshInterval;
-let token_refresh_time = 1000 * 60 * 15;
+let token_refresh_time = 5000;
 
 function tokenRefreshInterval(dispatch, access_token) {
   if (refreshInterval) window.clearInterval(refreshInterval);

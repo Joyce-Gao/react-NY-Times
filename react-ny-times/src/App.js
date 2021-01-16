@@ -6,7 +6,7 @@ import configureStore from "./store/configureStore";
 import Homepage from "./pages/Homepage";
 import World from "./pages/World";
 import Science from "./pages/Science";
-import Signin from "./pages/Signin";
+import SignIn from "./pages/SignIn";
 import Search from "./pages/Search";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
@@ -19,7 +19,7 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/" component={Homepage} />
-          <Route path="/signin" component={Signin} />
+          <Route path="/signIn" component={SignIn} />
           <Route path="/world" component={World} />
           <Route path="/search" component={Search} />
           <Route path="/science">

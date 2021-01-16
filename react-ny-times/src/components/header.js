@@ -4,11 +4,11 @@ import { useSelector } from "react-redux";
 import { NAVLIST, SIGNIN } from "../constants/Common";
 import { SearchBox } from "./SearchBox";
 import "./Header.css";
-import { useRefreshToken } from "../util/Helper";
+import { useRefreshToken } from "../hooks/CustomHook";
 
 export const Header = () => {
   const isLogin = useSelector((state) => state?.User?.isLogin);
-  const accout = useSelector((state) => state?.User?.accout);
+  const account = useSelector((state) => state?.User?.account);
   const navList = NAVLIST.map((item, index) => (
     <Nav.Link key={index} href={item.path}>
       {item.label}
@@ -28,7 +28,7 @@ export const Header = () => {
               </Navbar.Collapse>
             </Col>
             <Col xs="2" lg="2">
-              {isLogin && <div className="header-user-state">{accout}</div>}
+              {isLogin && <div className="header-user-state">{account}</div>}
               {!isLogin && (
                 <Nav.Link href="/signin" className="header-user-state">
                   {SIGNIN}

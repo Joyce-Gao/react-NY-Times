@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Spinner } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { NewsItem } from "./NewsItem";
-import { useGetNewsList } from "../util/Helper";
+import { useGetNewsList } from "../hooks/CustomHook";
 import { PaginationList } from "../components/Pagination";
 
 export const List = ({ url }) => {

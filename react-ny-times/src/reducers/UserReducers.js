@@ -10,7 +10,7 @@ import {
 
 let initialState = {
   isLogin: false,
-  accout: null,
+  account: null,
   access_token: null,
 };
 export const User = (state = initialState, action = {}) => {
@@ -20,7 +20,7 @@ export const User = (state = initialState, action = {}) => {
       return {
         ...state,
         isLogin: true,
-        accout: action.accout,
+        account: action.account,
         access_token: action.token,
       };
     case SIGNIN_FAILURE:
@@ -28,7 +28,7 @@ export const User = (state = initialState, action = {}) => {
       return {
         ...state,
         isLogin: false,
-        accout: null,
+        account: null,
         access_token: null,
       };
     case REFRESHING_TOKEN:

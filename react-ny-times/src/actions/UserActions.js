@@ -7,7 +7,7 @@ import {
   REFRESHING_TOKEN_DONE,
   REFRESHING_TOKEN_FAILURE,
 } from "../constants/Common";
-import { login, register, refreshToken_request } from "../util/Helper";
+import { login, register, refreshToken_request } from "../service/userService";
 
 export function signInAction(email, password) {
   return (dispatch) => {
@@ -15,14 +15,14 @@ export function signInAction(email, password) {
       (res) => {
         return dispatch({
           type: SIGN_IN,
-          accout: email,
+          account: email,
           ...res?.data,
         });
       },
       (err) => {
         dispatch({
           type: SIGNIN_FAILURE,
-          accout: null,
+          account: null,
           access_token: null,
         });
         return Promise.reject(err);
@@ -37,14 +37,14 @@ export function registerAction(email, password) {
       (res) => {
         return dispatch({
           type: REGISTER_DONE,
-          accout: email,
+          account: email,
           ...res?.data,
         });
       },
       (err) => {
         dispatch({
           type: REGISTER_FAILURE,
-          accout: null,
+          account: null,
           access_token: null,
         });
         return Promise.reject(err);
